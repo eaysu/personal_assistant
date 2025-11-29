@@ -1,112 +1,92 @@
 # 🤖 Personal Assistant Chatbot
 
-Modern, offline personal assistant chatbot application built with FastAPI + HTML/CSS/JS.
+AI-powered personal assistant chatbot for Enes Aysu, built with FastAPI backend and modern web frontend. Helps visitors learn about Enes's professional background, skills, and experience.
 
 ## ✨ Features
 
-- 🔒 **Fully Offline**: No API key required
-- 🎨 **Modern UI**: Dark blue theme, gradient transitions, glass effect
-- 📱 **Responsive**: Mobile and desktop compatible
-- 🧠 **Multi-LLM Support**: GPT4All, Ollama, llama-cpp-python
-- 💾 **RAG System**: Chunks personal information by headers and performs intelligent search
-- 🔍 **Smart Context**: Finds most relevant personal information based on queries and sends to LLM
-- 🤖 **Smart Welcome**: Welcome message on application startup
-- ⚡ **Fast**: High performance with FastAPI backend
-- 🚀 **Easy Deploy**: Free deployment on platforms like Netlify, Vercel
+- 🤖 **AI-Powered**: Uses Google Gemini 2.5 Flash for intelligent responses
+- 🎨 **Modern UI**: Dark blue theme with gradient transitions and glass effects
+- 📱 **Responsive Design**: Optimized for mobile and desktop
+- 💬 **Professional Assistant**: Represents Enes to visitors (employers, colleagues, etc.)
+- 📄 **Context-Aware**: Uses complete personal data for accurate responses
+- ⚡ **Fast Performance**: High-performance FastAPI backend
+- 🐳 **Docker Ready**: Containerized for easy deployment
+- 🚀 **Railway Deploy**: Configured for Railway platform deployment
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
 personal_assistant/
-├── main.py              # FastAPI ana uygulama
-├── llm_engine.py        # LLM entegrasyon motoru
-├── memory.py            # Bellek ve kullanıcı veri yönetimi
-├── rag_system.py        # RAG (Retrieval-Augmented Generation) sistemi
-├── requirements.txt     # Python bağımlılıkları
-├── user_data.txt        # Kullanıcı kişisel bilgileri
-├── models/              # LLM model dosyaları
-├── static/              # Frontend dosyları
-│   ├── index.html       # Ana HTML dosyası
-│   ├── style.css        # CSS stilleri
-│   └── app.js           # JavaScript uygulaması
-├── start.sh             # Başlatma scripti
-├── Procfile             # Heroku deploy dosyası
-├── railway.json         # Railway deploy dosyası
-└── README.md            # Bu dosya
+├── main.py              # FastAPI main application
+├── llm_engine.py        # Gemini API integration engine
+├── requirements.txt     # Python dependencies
+├── user_data.txt        # Enes's personal information
+├── Dockerfile           # Docker container configuration
+├── railway.json         # Railway deployment configuration
+├── static/              # Frontend files
+│   ├── index.html       # Main HTML file
+│   ├── style.css        # CSS styles
+│   └── app.js           # JavaScript application
+└── README.md            # This file
 ```
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Installation and Setup
 
-### 1. Gereksinimler
+### 1. Requirements
 
-- Python 3.8+
-- pip (Python paket yöneticisi)
+- Python 3.11+
+- Google Gemini API Key
+- pip (Python package manager)
 
-### 2. Kurulum
+### 2. Installation
 
 ```bash
-# Proje dizinine git
+# Navigate to project directory
 cd personal_assistant
 
-# Sanal ortam oluştur (önerilen)
+# Create virtual environment (recommended)
 python -m venv venv
 
-# Sanal ortamı aktifleştir
+# Activate virtual environment
 # Windows:
 venv\Scripts\activate
 # macOS/Linux:
 source venv/bin/activate
 
-# Bağımlılıkları yükle
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. LLM Backend Kurulumu
+### 3. Get Gemini API Key
 
-Bu uygulama **Ollama + Gemma 3 4B** modelini kullanacak şekilde optimize edilmiştir:
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create a new API key
+3. Copy the API key
 
-#### Ollama + Gemma 3 4B Kurulumu (Önerilen)
+### 4. Set Environment Variable
+
 ```bash
-# 1. Ollama'yı yükle: https://ollama.ai/download
-# macOS için:
-curl -fsSL https://ollama.ai/install.sh | sh
+# Set the API key as environment variable
+export GEMINI_API_KEY=your_api_key_here
 
-# 2. Gemma 3 4B modelini indir (yaklaşık 2.6GB)
-ollama pull gemma3:4b-it-q4_K_M
-
-# 3. Ollama servisini başlat
-ollama serve
+# For Windows:
+set GEMINI_API_KEY=your_api_key_here
 ```
 
-#### Alternatif Seçenekler:
-
-**Seçenek B: GPT4All**
-```bash
-pip install gpt4all
-```
-
-**Seçenek C: llama-cpp-python**
-```bash
-pip install llama-cpp-python
-```
-
-### 4. Uygulamayı Başlat
+### 5. Run the Application
 
 ```bash
-# Proje dizininde
+# Start the application
 python main.py
-
-# Veya başlatma scriptini kullan (macOS/Linux)
-./start.sh
 ```
 
-Uygulama `http://localhost:8000` adresinde çalışacak.
+The application will be available at `http://localhost:8000`.
 
-## 🎯 Kullanım
+## 🎯 Usage
 
-Uygulama başlatıldıktan sonra tarayıcınızda `http://localhost:8000` adresine gidin.
+After starting the application, visit `http://localhost:8000` in your browser.
 
-The chatbot will automatically display a welcome message. You can then ask questions about Enes in English:
+The chatbot serves as Enes Aysu's professional assistant, helping visitors learn about his background. You can ask questions in English:
 
 ### 💬 Example Questions:
 
@@ -116,109 +96,60 @@ The chatbot will automatically display a welcome message. You can then ask quest
 - "What projects has he worked on?"
 - "What are his career goals?"
 - "What are his technical skills?"
+- "What is his experience with AI and machine learning?"
 
-The chatbot will provide detailed answers based on Enes's personal information!
+The AI assistant will provide detailed, accurate answers based on Enes's comprehensive professional profile!
 
 ## 🚀 Deployment
 
 ### Option 1: Railway (Recommended)
 
-1. **Get Gemini API Key:**
-   - Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Create a new API key
-   - Copy the key
+This project is configured for Railway deployment with Docker.
+
+1. **Prepare Repository:**
+   ```bash
+   # Push your code to GitHub
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
 
 2. **Deploy to Railway:**
-   ```bash
-   # Install Railway CLI
-   npm install -g @railway/cli
-   
-   # Login to Railway
-   railway login
-   
-   # Initialize project
-   railway init
-   
-   # Set environment variable
-   railway variables set GEMINI_API_KEY=your_api_key_here
-   
-   # Deploy
-   railway up
-   ```
+   - Visit [Railway](https://railway.app)
+   - Connect your GitHub repository
+   - Set environment variable: `GEMINI_API_KEY=your_api_key_here`
+   - Railway will automatically detect the Dockerfile and deploy
 
 3. **Access your app:**
    - Railway will provide a URL like: `https://your-app.railway.app`
 
-### Option 2: Render
+### Option 2: Docker Local
 
-1. **Connect GitHub:**
-   - Push code to GitHub
-   - Connect repository to Render
+```bash
+# Build the Docker image
+docker build -t personal-assistant .
 
-2. **Set Environment Variables:**
-   - `GEMINI_API_KEY`: Your Gemini API key
-   - `PORT`: 8000 (auto-set by Render)
-
-3. **Deploy:**
-   - Render will automatically build and deploy
-
-### Option 3: Local with Gemini API
-
-1. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Set environment variable:**
-   ```bash
-   export GEMINI_API_KEY=your_api_key_here
-   ```
-
-3. **Run:**
-   ```bash
-   python main.py
-   ```
-
-### Kişisel Bilgileri Düzenleme
-
-`user_data.txt` dosyasını düzenleyerek asistanınızın sizi daha iyi tanımasını sağlayın:
-
-```txt
-# Kişisel Asistan - Kullanıcı Bilgileri
-
-## Temel Bilgiler
-- İsim: [Adınız]
-- Yaş: [Yaşınız]
-- Meslek: [Mesleğiniz]
-- Konum: [Şehir/Ülke]
-
-## İlgi Alanları
-- [İlgi alanlarınız]
-- [Hobiler]
-
-## Tercihler
-- Dil: Türkçe
-- İletişim Tarzı: Samimi
-- Zaman Dilimi: UTC+3
+# Run the container
+docker run -p 8000:8000 -e GEMINI_API_KEY=your_api_key_here personal-assistant
 ```
 
-### Chat Özellikleri
+### Option 3: Other Platforms
 
-- **Hızlı Eylemler**: Önceden tanımlı mesajlar için butonlar
-- **Otomatik Scroll**: Yeni mesajlarda otomatik kaydırma
-- **Karakter Sayacı**: 1000 karakter limiti ile
-- **Typing Indicator**: Asistan yazarken animasyon
-- **Ses Bildirimleri**: Yeni mesaj geldiğinde ses
-- **Tema Seçenekleri**: Koyu/Açık tema
-- **Responsive Tasarım**: Tüm cihazlarda uyumlu
+The application can be deployed to any platform that supports:
+- Python 3.11+
+- Environment variables
+- Port configuration
+
+Platforms like Render, Heroku, or DigitalOcean App Platform work well.
+
 
 ## 🔧 API Endpoints
 
 ### `GET /`
-Ana sayfa (frontend)
+Serves the main frontend application
 
 ### `GET /health`
-Sistem durumu kontrolü
+Health check endpoint
 ```json
 {
   "status": "healthy",
@@ -228,139 +159,92 @@ Sistem durumu kontrolü
 ```
 
 ### `POST /chat`
-Chat mesajı gönderme
+Main chat endpoint for interacting with the AI assistant
 ```json
 {
-  "message": "Merhaba, nasılsın?"
+  "message": "What is Enes's professional experience?"
 }
 ```
 
-Yanıt:
+Response:
 ```json
 {
-  "response": "Merhaba! Ben iyiyim, teşekkür ederim. Size nasıl yardımcı olabilirim?",
+  "response": "Enes Aysu is an AI Engineer at NeviTech with experience in...",
   "status": "success"
 }
 ```
 
 ### `GET /user-data`
-Kullanıcı verilerini görüntüleme
-
-## 🚀 Deploy Seçenekleri
-
-### 1. Yerel Network
-```bash
-# Tüm IP'lerden erişim için
-uvicorn main:app --host 0.0.0.0 --port 8000
+Returns Enes's personal information data
+```json
+{
+  "user_data": "# Personal Assistant - User Information...",
+  "status": "success"
+}
 ```
 
-### 2. Heroku
-```bash
-# Procfile oluştur
-echo "web: uvicorn main:app --host 0.0.0.0 --port \$PORT" > Procfile
-
-# Git ile deploy
-git init
-git add .
-git commit -m "Initial commit"
-heroku create your-app-name
-git push heroku main
+### `GET /llm-status`
+Get detailed LLM engine status for debugging
+```json
+{
+  "llm_status": {...},
+  "backend": "gemini",
+  "model": "gemini-2.5-flash",
+  "ready": true
+}
 ```
 
-### 3. Railway
-```bash
-# railway.json oluştur
-echo '{"build": {"builder": "NIXPACKS"}, "deploy": {"startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT"}}' > railway.json
-```
+### `POST /test-llm`
+Test endpoint for LLM functionality
 
-### 4. Render
-- GitHub repo'yu Render'a bağla
-- Build Command: `pip install -r requirements.txt`
-- Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+## �️ Development
 
-## 🛠️ Geliştirme
-
-### Yeni Özellik Ekleme
-
-1. **Backend**: `main.py`'ye yeni endpoint ekle
-2. **LLM**: `llm_engine.py`'de model ayarlarını düzenle
-3. **Frontend**: `app.js`'de yeni fonksiyon ekle
-4. **Stil**: `style.css`'de görsel düzenlemeler yap
-
-### Debug Modu
+### Local Development
 
 ```bash
-# Debug modunda çalıştır
-uvicorn main:app --reload --log-level debug
+# Run in development mode with auto-reload
+uvicorn main:app --reload --log-level debug --host 0.0.0.0 --port 8000
 ```
 
-### Loglama
+### Adding New Features
 
-Loglar konsola yazdırılır. Dosyaya kaydetmek için:
+1. **Backend**: Add new endpoints in `main.py`
+2. **LLM Engine**: Modify `llm_engine.py` for AI functionality
+3. **Frontend**: Update `static/app.js` for new UI features
+4. **Styling**: Enhance `static/style.css` for visual improvements
 
-```python
-import logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('app.log'),
-        logging.StreamHandler()
-    ]
-)
-```
+### Environment Variables
 
-## 🔒 Güvenlik
+- `GEMINI_API_KEY`: Required for AI functionality
+- `PORT`: Application port (default: 8000)
 
-- ✅ CORS koruması aktif
-- ✅ Input validation (Pydantic)
-- ✅ Rate limiting (isteğe bağlı)
-- ✅ Offline çalışma (API anahtarı yok)
-- ✅ Kişisel veriler yerel
+## 🔒 Security Features
 
-## 🐛 Sorun Giderme
+- ✅ CORS protection enabled
+- ✅ Input validation with Pydantic
+- ✅ Environment variable for API key
+- ✅ Professional data handling
+- ✅ Secure API communication
 
-### LLM Yüklenmiyor
+## 🐛 Troubleshooting
+
+### Gemini API Issues
 ```bash
-# Model dosyalarını kontrol et
-ls backend/models/
+# Check if API key is set
+echo $GEMINI_API_KEY
 
-# GPT4All için
-pip install --upgrade gpt4all
-
-# Ollama için
-ollama list
+# Verify API key validity at Google AI Studio
+# https://makersuite.google.com/app/apikey
 ```
 
-### Port Çakışması
-```bash
-# Farklı port kullan
-uvicorn main:app --port 8001
-```
+## 📝 License
 
-### Bellek Sorunu
-- Daha küçük model kullan
-- `n_ctx` parametresini azalt
-- RAM kullanımını kontrol et
-
-## 📝 Lisans
-
-MIT License - Kişisel ve ticari kullanım için ücretsiz.
-
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request açın
-
-## 📞 Destek
-
-- 🐛 **Bug Report**: GitHub Issues
-- 💡 **Feature Request**: GitHub Discussions
-- 📧 **İletişim**: [email@example.com]
+MIT License - Free for personal and commercial use.
 
 ---
 
-**Not**: Bu uygulama tamamen offline çalışır ve kişisel verileriniz hiçbir yere gönderilmez. Tüm işlemler yerel bilgisayarınızda gerçekleşir.
+## 🎯 About This Project
+
+This personal assistant chatbot serves as Enes Aysu's professional representative, helping visitors learn about his background, skills, and experience. Built with modern web technologies and powered by Google's Gemini AI, it provides accurate, contextual responses about Enes's professional journey.
+
+**Perfect for**: Portfolio websites, professional networking, recruitment processes, and academic applications.
