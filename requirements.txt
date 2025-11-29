@@ -1,0 +1,12 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+requests==2.31.0
+
+# LLM Backend - Gemini API only
+google-generativeai==0.3.2
+
+# Optional dependencies
+aiofiles==23.2.1
+python-jose[cryptography]==3.3.0

@@ -1,0 +1,95 @@
+# Personal Assistant - User Information
+
+## Basic Information
+- Name: Enes Aysu
+- Age: 24
+- Profession: AI Engineer
+- Location: Istanbul, Turkey
+- Education: Gebze Technical University - Computer Engineering (Bachelor's)
+
+## Interests
+- Artificial Intelligence and Machine Learning
+- Natural Language Processing (NLP)
+- Computer Vision
+- Deep Learning
+- LLMs and RAG systems
+- Finance and AI applications
+
+## Preferences
+- Language: English (advanced), Turkish (native)
+
+## Technical Skills
+- **Programming**: Python, C, C++, Java
+- **AI/ML**: PyTorch, TensorFlow, Hugging Face, OCR
+- **NLP**: LangChain, Ollama
+- **Computer Vision**: OpenCV, YOLO, PIL/Pillow
+- **Web Development**: FastAPI, Flask, HTML, CSS
+- **Tools**: Qt, Raspberry Pi, Web Scraping
+
+## Professional Experience
+**AI Engineer - NeviTech (June 2024 - Present)**
+- Designed and deployed an LLM-powered document Q&A platform (LangChain + RAG + Ollama) that answered compliance-related queries
+- Built a scalable social media mining pipeline that retrieves and structures insights from multiple platforms, enabling real-time monitoring of market sentiment
+- Developed an OCR-based signature & stamp recognition tool, reducing manual document verification time
+- Implemented a speaker recognition system using deep audio embeddings, achieved 90%+ voice similarity
+- Created a Turkish emotion-aware TTS model, improving naturalness and expressiveness in synthesized speech for customer-facing applications
+
+**AI & Computer Vision Engineer - Inovako**
+- Quality control vision system (Qt + OpenCV)
+- Industrial automation projects
+
+**Image Processing Intern - Yongatek Microelectronics**
+- Developed an image processing interface with OpenCV that controls deviation status of conveyor belts in factories
+- Made object detection pipeline that performed with YOLO by training a dataset of images via Roboflow
+
+**Intern - Mikronya Lithography Systems**
+- Developed a user interface for lithography systems by using Python and Qt on Raspberry Pi
+- Controlled the solenoid valves and power supplies connected to the Raspberry Pi
+
+## Important Notes
+- Passionate about algorithms transcending static rules to learn from data
+- Experienced in developing real-world AI systems
+- Skilled in transitioning from prototypes to production systems
+- Experience working in interdisciplinary teams
+- Balancing model performance with robustness and sustainability
+- Experience in domains where factual accuracy and transparency are critical
+- End-user impact focused approach in industrial AI applications
+
+## Academic Projects
+**1. Detection of Manipulative Social Media Messages with Deep Learning Models (Graduation Project)**
+- Collected and preprocessed finance news and social media messages with web scraping techniques
+- Trained language models for classifying finance related social media messages as manipulative or non-manipulative
+
+**2. Financial Document Question and Answer System (Graduation Project)**
+- Collected and preprocessed tax law documents from revenue administration
+- Developed a question answering interface with Streamlit powered by local LLM (Ollama) integrated with RAG and Langchain
+- Aimed to answer users' questions by citing the necessary article based on the law documents
+
+**3. EduQ - Quiz Generator (Group Project)**
+- Secured TÜBİTAK funding for the project, recognizing its potential impact in AI-driven education
+- Designed an LLM-based quiz generation system using Ollama + FastAPI, enabling students to generate practice questions directly from their lecture notes
+- Deployed the solution on AWS, ensuring scalability and accessibility for multi-user environments
+- Improved learning outcomes by providing personalized quiz content and real-time feedback for students
+
+## Academic Background
+- **Bachelor's**: Gebze Technical University - Computer Engineering
+- **Relevant Courses**: Natural Language Processing, Image Processing, Data Mining, Applied Augmented Reality
+- **Core Subjects**: Programming (C, C++, Java, Python), Data Structures, Algorithms, Logic Circuits, Computer Organization, Operating Systems, Systems Programming
+- **Mathematics**: Probability and Statistics, Discrete Mathematics, Linear Algebra, Differential Equations
+
+## Goals
+- Continue with Artificial Intelligence Master's program at FAU
+- Specialize in deep learning architectures, sequence models, multimodal systems
+- Work in trustworthy AI and explainable AI fields
+- Develop end-to-end AI systems in finance, automation, and information access
+- Produce reliable, explainable, and high-quality AI solutions
+- Especially eager to develop AI applications that make a real impact in health and education
+- Learning German to improve communication in international AI research and collaboration
+
+## Hobbies
+- Football
+- Tennis
+- Travelling
+- Gym
+- Cinema
+
