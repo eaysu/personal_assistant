@@ -279,7 +279,7 @@ class PersonalAssistantChat {
             // Clear history
             this.messageHistory = [];
             
-            this.showNotification('Sohbet geçmişi temizlendi');
+            this.showNotification('Chat history cleared');
         }
     }
     
@@ -294,18 +294,18 @@ class PersonalAssistantChat {
     changeTheme(theme) {
         document.body.setAttribute('data-theme', theme);
         localStorage.setItem('chat-theme', theme);
-        this.showNotification(`Tema ${theme === 'dark' ? 'koyu' : 'açık'} olarak değiştirildi`);
+        this.showNotification(`Theme changed to ${theme === 'dark' ? 'dark' : 'light'} mode`);
     }
     
     changeFontSize(size) {
         document.body.setAttribute('data-font-size', size);
         localStorage.setItem('chat-font-size', size);
-        this.showNotification(`Yazı boyutu ${size} olarak ayarlandı`);
+        this.showNotification(`Font size changed to ${size}`);
     }
     
     toggleSound(enabled) {
         localStorage.setItem('chat-sound', enabled);
-        this.showNotification(`Ses bildirimleri ${enabled ? 'açıldı' : 'kapatıldı'}`);
+        this.showNotification(`Sound notifications ${enabled ? 'enabled' : 'disabled'}`);
     }
     
     loadSettings() {
@@ -459,11 +459,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add online/offline listeners
     window.addEventListener('online', () => {
-        chat.updateStatus('Çevrimiçi', 'online');
+        chat.updateStatus('Online', 'online');
         chat.checkHealth();
     });
     
     window.addEventListener('offline', () => {
-        chat.updateStatus('Çevrimdışı', 'offline');
+        chat.updateStatus('Offline', 'offline');
     });
 });

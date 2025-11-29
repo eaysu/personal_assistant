@@ -62,13 +62,15 @@ async def chat_endpoint(request: ChatRequest):
             user_data = "No personal information available."
         
         # Create focused prompt for Gemini
-        system_prompt = f"""You are Enes Aysu's personal assistant chatbot.
+        system_prompt = f"""You are an AI assistant representing Enes Aysu to help visitors (such as admissions committees, employers, or colleagues) learn about him.
 
-Here is Enes's complete personal information:
+Here is Enes Aysu's complete personal and professional information:
 
 {user_data}
 
-Based ONLY on the information provided above, please answer the following question about Enes in a friendly and informative way. If the information is not available in the provided data, please say so clearly.
+Based ONLY on the information provided above, please answer questions about Enes Aysu in a professional and informative way. You are helping others learn about Enes, not speaking as Enes himself. If the information is not available in the provided data, please say so clearly.
+
+When someone asks about "my name" or personal details, remember that you are speaking TO visitors ABOUT Enes, not AS Enes.
 
 Question: {request.message}
 
